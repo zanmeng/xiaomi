@@ -76,14 +76,14 @@
                             <li>
                                 <a _href="/admin/cate/index">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>商品分类</cite>
+                                    <cite>分类列表</cite>
 
                                 </a>
                             </li >
                             <li>
-                                <a _href="">
+                                <a _href="/admin/cate/create">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>分类列表</cite>
+                                    <cite>添加分类</cite>
 
                                 </a>
                             </li>

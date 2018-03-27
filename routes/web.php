@@ -35,5 +35,7 @@ Route::resource('admin/good','Admin\GoodController');
 //商品分类
 Route::get('admin/cate/index','Admin\CateController@index');
 //添加分类
-Route::get('admin/cate/cate','Admin\CateController@create');
-
+Route::get('admin/cate/create','Admin\CateController@add');
+Route::post('admin/cate/store','Admin\CateController@store');
+//删除分类
+Route::get('admin/cate/delete/{id}','Admin\CateController@delete');

@@ -16,8 +16,32 @@ class CateController extends Controller
 
     //添加子分类
     public function add(){
-        $cid=empty($_GET['cid']) ? 0 : $_GET['cid']  ;
-        $cates=$this->cates->orderBy(" concat(path,cid,',') ") ->select();
-        return view('Admin.cateAdd',compact('cates'));
+
+        $fid = Cate::where('parentId',0)->get();
+        return view('Admin.cateAdd',compact('fid'));
+    }
+
+    public function store(Request $request){
+        $request->except('_token');
+        $res=Cate::create(
+            ['catName'=>$request['catName'],
+            'parentId'=>$request['cid'],
+        ]);
+        if($res){
+            echo '添加成功';
+            return redirect(url('admin/cate/index'));
+        }
+    }
+
+    //删除分类
+    public function delete($id){
+
+        $input=Cate::find('$id');
+        dd($input);
+        $res=$input->delete();
+        if($res){
+            echo '删除成功';
+            return redirect(url('admin/cate/index'));
+        }
     }
 }

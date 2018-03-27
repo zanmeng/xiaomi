@@ -65,21 +65,20 @@
             <tbody id="x-img">
             <tr>
                 <td>
-                    {{$v->cid}}
+                    {{$v->catId}}
                 </td>
                 <td>
-                    {{$v->catename}}
+                    {{$v->catName}}
                 </td>
                 <td>
-                    {{$v->pid}}
+                    {{$v->parentId}}
                 </td>
                 <td>
                     {{$v->path}}
                 </td>
                 <td>
                     <a class="link-update" href="./index.php?m=admin&c=cate&a=edit&cid=<?=$v->cid?>">修改</a>
-                    <a class="link-del" href="./index.php?m=admin&c=cate&a=destory&cid=<?=$v->cid?>">删除</a>
-                    <a class="link-del" href="/admin/cate/create">添加子分类</a>
+                    <a class="link-del" href="/admin/cate/delete/{{$v->catId}}">删除</a>
                 </td>
             </tr>
 

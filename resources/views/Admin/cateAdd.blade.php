@@ -25,7 +25,7 @@
 
 <body>
 <div class="x-body">
-    <form class="layui-form" action="/admin/cate" method="post">
+    <form class="layui-form" action="/admin/cate/store" method="post">
         {{ csrf_field() }}
         <div class="layui-form-item">
             {{--<label for="desc" class="layui-form-label">--}}
@@ -33,16 +33,15 @@
                 <div class="layui-input-block" style="width:200px">
                     <select name="cid"  lay-filter="">
                         <option value=""></option>
+                        <option value="0">顶级分类</option>
                         @foreach($fid as $v)
-                            <option value="{{ $v->cid }}">{{ $v->catename }} </option>
+                            <option value="{{ $v->catId }}">{{ $v->catName }} </option>
                         @endforeach
                     </select>
                 </div>
             </label>
         </div>
-
-        <input type="hidden" name="pid" value="{{$fid->pid}}">
-
+        {{--<input type="hidden" value="{{$fid->parentId}}">--}}
     <!--     {{--<div class="layui-form-item">--}}
             {{--<label for="desc" class="layui-form-label">--}}
                 {{--<span class="x-red">*</span>父类--}}
@@ -62,7 +61,7 @@
                 <span class="x-red">*</span>分类名称
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="desc" name="catename" required="" lay-verify=""
+                <input type="text" id="desc" name="catName" required="" lay-verify=""
                        autocomplete="off" class="layui-input">
             </div>
             <div class="layui-form-mid layui-word-aux">
@@ -73,9 +72,7 @@
         <div class="layui-form-item">
             <label for="L_repass" class="layui-form-label">
             </label>
-            <button  class="layui-btn" lay-filter="add" lay-submit="">
-                增加
-            </button>
+            <input type="submit">
         </div>
     </form>
 </div>

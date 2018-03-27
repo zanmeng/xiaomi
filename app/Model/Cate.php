@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cate extends Model
 {
     //
-    public $table='category';
-    public $primaryKey='gid';
+    public $table='cats';
+    public $primaryKey='catid';
     public  $timestamps=false;
     public  $guarded=[];
 }

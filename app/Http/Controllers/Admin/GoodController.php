@@ -232,8 +232,6 @@ class GoodController extends Controller
     public function upload(Request $request)
     {
         $file = $request->file('gpic');
-//        return 123;
-//        return $file;
         //如果是有效的上传文件
         if($file->isValid()) {
 //            获取原文件的文件类型
@@ -242,7 +240,6 @@ class GoodController extends Controller
             $newfile = md5(date('YmdHis').rand(1000,9999).uniqid()).'.'.$ext;
 //            1. 将文件上传到本地服务器
             //将文件从临时目录移动到制定目录
-//           $path = $file->move(public_path().'/uploads',$newfile);
             $path = $file->move(public_path().'/upload',$newfile);
 //
             //将上传文件的路径返回1给客户端
