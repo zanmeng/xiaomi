@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 //前台
 //前台首页
 Route::get('home/index','home\IndexController@index');
@@ -40,3 +41,15 @@ Route::get('home/userinfo','home\UserController@userinfo');
 //我的订单
 Route::get('home/orderGoods','home\UserController@OrderGoods');
 
+=======
+Route::get('/admin/index','Admin\indexController@index');
+//    后台信息页
+Route::get('/admin/info','Admin\indexController@info');
+
+
+//orders订单主表
+    Route::get('/admin/order/list','Admin\ordersController@list');
+
+//    文件上传路由
+    Route::post('/admin/upload','uploadController@upload');
+>>>>>>> 8b95f112827938e1f709d3b93319acd2beee5958
