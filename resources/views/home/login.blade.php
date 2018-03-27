@@ -41,7 +41,7 @@
                 <div class="username">密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input class="shurukuang" type="password" name="password" placeholder="请输入你的密码"/></div>
                 <div class="username">
                     <div class="left fl">验证码:&nbsp;<input class="yanzhengma" type="text" name="code" placeholder="请输入验证码"/></div>
-                    <div class="right fl"><img src="{{url('home/code')}}" onclick="this.src='{{url('admin/code')}}?'+Math.random()" alt="" ></div>
+                    <div class="right fl"><img src="{{url('home/code')}}" onclick="this.src='{{url('home/code')}}?'+Math.random()" alt="" ></div>
                     <div class="clear"></div>
                 </div>
             </div>

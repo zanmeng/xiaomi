@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     //关联表
-    public $table = 'users_login';
+    public $table = 'user_login';
     //关联表主键
     public $primaryKey = 'login_id';
     //是否维护
