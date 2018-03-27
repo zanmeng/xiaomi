@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\home;
 
-use App\Model\User;
+use App\Model\homeUser;
 use App\Org\code\Code;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -57,7 +57,7 @@ class LoginController extends Controller
             return redirect('home/login')->with('errors','验证码错误');
         }
         //4.对账号进行验证
-        $user = User::where('userName',$input['username'])->first();
+        $user = homeUser::where('userName',$input['username'])->first();
 
         if(!$user){
             return redirect('home/login')->with('errors','用户名不存在');
@@ -93,7 +93,7 @@ class LoginController extends Controller
     {
         $uname = $_GET['uname'];
 
-        $user = User::where('userName',$uname)->first();
+        $user = homeUser::where('userName',$uname)->first();
 
         if($user){
             echo 1;
@@ -111,11 +111,11 @@ class LoginController extends Controller
         $str = Crypt::encrypt( $input['password']);
 
          //执行添加数据库
-        $user = new User;
+        $user = new homeUser;
 
-        User::create(['userName'=>$input['username'],'userPwd'=>$str]);
+        homeUser::create(['userName'=>$input['username'],'userPwd'=>$str]);
 
-        $user = User::where('userName',$input['username'])->first();
+        $user = homeUser::where('userName',$input['username'])->first();
 
         //
         //6.获取用户存入session

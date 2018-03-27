@@ -12,6 +12,6 @@ class ordersController extends Controller
     {
 
 
-        return view('Admin.order.list');
+        return view('admin.order.list');
     }
 }
