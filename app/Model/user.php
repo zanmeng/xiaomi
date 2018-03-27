@@ -12,7 +12,7 @@ class User extends Model
 //    2. 主键
     public $primaryKey = 'userId';
 
-//    3. 是否维护created_at updated_at字段
+//    3. 是否维护created_at updated_at
     public $timestamps = false;
 
 //    4. 是否允许批量操作字段
