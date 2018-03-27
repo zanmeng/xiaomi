@@ -39,6 +39,7 @@ Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>'isLogin'],fu
     //后天首页
     Route::get('index','IndexController@index');
 
+
     //后天信息页
     Route::get('info','IndexController@info');
 
@@ -53,7 +54,30 @@ Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>'isLogin'],fu
     Route::get('user/delall','UserController@delall');
 
     Route::resource('user','UserController');
+
+
+    //商品列表
+//停用启用
+    Route::post('good/changestatus','GoodController@changestatus');
+
+//批量删除
+    Route::get('good/delall','GoodController@delall');
+
+//图片上传
+    Route::post('good/upload','GoodController@upload');
+
+//商品控制器
+    Route::resource('good','GoodController');
+
+
+//商品分类
+    Route::get('cate/index','CateController@index');
+//添加分类
+    Route::get('cate/cate','CateController@create');
+
+
 });
+
 
 
 
@@ -81,5 +105,6 @@ Route::get('home/logout','home\IndexController@logout');
 Route::get('home/userinfo','home\UserController@userinfo');
 //我的订单
 Route::get('home/orderGoods','home\UserController@OrderGoods');
+
 
 
